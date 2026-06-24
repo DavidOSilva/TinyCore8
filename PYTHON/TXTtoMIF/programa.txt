@@ -1,0 +1,24 @@
+-- ================================================
+-- Programa de Teste para o Processador TinyCore8
+-- ================================================
+
+-- Carrega o dado do endereço 0 no registrador A
+LDA #0
+
+-- Carrega a constante 3 no registrador B.
+LDD #3
+
+-- Soma A + B. Armazena o resultado na RAM.
+ADD #1
+
+-- Carrega o resultado da soma anterior no registrador B.
+LDB #1
+
+-- Armazena o valor de B, a soma, no endereco 2 da RAM.
+STB #2
+
+-- Zera o Registrador A para satisfazer a condicao do JMP.
+LDC #0
+
+-- Pula para este proprio endereco, se A == 0, ficando preso um loop infinito.
+JMP #6

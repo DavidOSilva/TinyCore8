@@ -1,0 +1,59 @@
+module ArithmeticLogicUnit (
+
+    // Entradas de 8 bits sinalizadas.
+    input signed [7:0] in1,
+    input signed [7:0] in2,
+	 
+	// Selecionador de operação (5 bits)
+    input [4:0] selector,
+    
+    // Saída de 8 bits sinalizadas e carry out
+    output reg signed [7:0] out,
+    output reg cout
+);
+
+`include "Definitions.v"
+
+always @(*) begin
+    out  = 8'b0;
+    cout = 1'b0;
+
+    case (selector)
+        
+        // Operações Aritméticas.
+        `ADD: begin
+            out = in1 + in2;
+            cout = ((out > 8'd128) || (out < -8'd128)) ? 1'b1 : 1'b0;  // Overflow
+        end
+            
+        `SUB: out = in1 - in2;
+
+        `MUL: begin
+            out = in1 * in2;
+            cout = ((out > 8'd128) || (out < -8'd128)) ? 1'b1 : 1'b0;  // Overflow
+        end
+
+        `DIV: out = in1 / in2;
+            
+        // Operações Lógicas
+        `AND: out = in1 & in2;
+
+        `OR: out = in1 | in2;
+
+        `XOR: out = in1 ^ in2;
+
+        `CMP:
+            if (in1 > in2) out = 8'b00000001;  // Comparação: in1 > in2
+            else if (in1 < in2) out = 8'b11111111;  // Comparação: in1 < in2
+            else out = 8'b00000000;  // Comparação: in1 == in2
+
+        `NOT: out = ~in1;
+        
+        default: begin
+            out = 8'b00000000;
+            cout = 1'b0;
+        end
+    endcase
+end
+
+endmodule

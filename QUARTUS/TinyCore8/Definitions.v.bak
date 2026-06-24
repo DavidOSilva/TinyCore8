@@ -1,0 +1,21 @@
+// Requisitos:
+`define ADD 5'b0000
+`define SUB 5'b0001
+`define LDA 5'b0010
+`define STA 5'b0011
+`define LDB 5'b0100
+`define STB 5'b0101
+`define LDC 5'b0110
+`define JMP 5'b0111
+
+// Adicionais:
+`define AND 5'b1000
+`define  OR 5'b1001
+`define XOR 5'b1010
+`define NOT 5'b1011
+`define MUL 5'b1100
+`define DIV 5'b1101
+
+
+
+

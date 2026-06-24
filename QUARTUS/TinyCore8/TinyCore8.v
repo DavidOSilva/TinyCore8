@@ -1,0 +1,106 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Sun Nov 16 21:17:13 2025"
+
+module TinyCore8(
+	CLK,
+	RST,
+	REGA,
+	REGB
+);
+
+
+input wire	CLK;
+input wire	RST;
+output wire	[7:0] REGA;
+output wire	[7:0] REGB;
+
+wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
+wire	[3:0] SYNTHESIZED_WIRE_7;
+wire	[7:0] SYNTHESIZED_WIRE_8;
+wire	[11:0] SYNTHESIZED_WIRE_17;
+wire	[1:0] SYNTHESIZED_WIRE_10;
+wire	SYNTHESIZED_WIRE_11;
+wire	[7:0] SYNTHESIZED_WIRE_12;
+wire	[7:0] SYNTHESIZED_WIRE_13;
+wire	[7:0] SYNTHESIZED_WIRE_14;
+wire	[7:0] SYNTHESIZED_WIRE_16;
+
+
+
+
+
+Datapath	b2v_datapathInst(
+	.clk(CLK),
+	.rst(RST),
+	.pcLoadEnable(SYNTHESIZED_WIRE_0),
+	.pcIncEnable(SYNTHESIZED_WIRE_1),
+	.regWriteEnableA(SYNTHESIZED_WIRE_2),
+	.regWriteEnableB(SYNTHESIZED_WIRE_3),
+	.regAInMuxSel(SYNTHESIZED_WIRE_4),
+	.regBInMuxSel(SYNTHESIZED_WIRE_5),
+	.aluIn2MuxSel(SYNTHESIZED_WIRE_6),
+	.aluSelector(SYNTHESIZED_WIRE_7),
+	.dataFromRam(SYNTHESIZED_WIRE_8),
+	.instruction(SYNTHESIZED_WIRE_17),
+	.ramInMuxSel(SYNTHESIZED_WIRE_10),
+	.addrToRam(SYNTHESIZED_WIRE_12),
+	.addrToRom(SYNTHESIZED_WIRE_16),
+	.aluOutResult(SYNTHESIZED_WIRE_14),
+	.dataToRam(SYNTHESIZED_WIRE_13),
+	.registerAOut(REGA),
+	.registerBOut(REGB));
+
+
+ValuesRAM	b2v_inst(
+	.wren(SYNTHESIZED_WIRE_11),
+	.clock(CLK),
+	.address(SYNTHESIZED_WIRE_12),
+	.data(SYNTHESIZED_WIRE_13),
+	.q(SYNTHESIZED_WIRE_8));
+
+
+ControlUnit	b2v_inst1(
+	.clk(CLK),
+	.rst(RST),
+	.aluResult(SYNTHESIZED_WIRE_14),
+	.instruction(SYNTHESIZED_WIRE_17),
+	.pcLoadEnable(SYNTHESIZED_WIRE_0),
+	.pcIncEnable(SYNTHESIZED_WIRE_1),
+	.regWriteEnableA(SYNTHESIZED_WIRE_2),
+	.regWriteEnableB(SYNTHESIZED_WIRE_3),
+	.regAInMuxSel(SYNTHESIZED_WIRE_4),
+	.regBInMuxSel(SYNTHESIZED_WIRE_5),
+	.aluIn2MuxSel(SYNTHESIZED_WIRE_6),
+	.ramWriteEnable(SYNTHESIZED_WIRE_11),
+	.aluSelector(SYNTHESIZED_WIRE_7),
+	.ramInMuxSel(SYNTHESIZED_WIRE_10));
+
+
+ProgramROM	b2v_inst2(
+	.clock(CLK),
+	.address(SYNTHESIZED_WIRE_16),
+	.q(SYNTHESIZED_WIRE_17));
+
+
+endmodule

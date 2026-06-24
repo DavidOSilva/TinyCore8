@@ -1,0 +1,43 @@
+module RegisterBank (
+    input wire clk,
+    input wire reset,
+
+    // Entradas do Registrador A
+    input wire [7:0] dataInA,
+    input wire writeEnableA,
+
+    // Entradas do Registrador B
+    input wire [7:0] dataInB,
+    input wire writeEnableB,
+
+    // Saidas dos Registradores
+    output wire [7:0] dataOutA,
+    output wire [7:0] dataOutB
+);
+
+    // Declaracao interna dos registradores A e B
+    reg [7:0] registerA, registerB;
+
+    always @(posedge clk) begin
+        if (reset) begin
+
+            registerA <= 8'h00;
+            registerB <= 8'h00;
+        end else begin
+            // Logica de escrita separada para Registrador A
+            if (writeEnableA) begin
+                registerA <= dataInA;
+            end
+
+            // Logica de escrita separada para Registrador B
+            if (writeEnableB) begin
+                registerB <= dataInB;
+            end
+        end
+    end
+
+    // Disponibiliza o valor dos registradores nas saidas
+    assign dataOutA = registerA;
+    assign dataOutB = registerB;
+
+endmodule

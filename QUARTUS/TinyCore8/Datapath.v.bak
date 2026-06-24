@@ -1,0 +1,133 @@
+module Datapath (
+    input wire clk,
+    input wire reset,
+
+    // --- Entradas do Top-Level ---
+    // Vem da ROM de Instrucoes
+    input wire [12:0] instruction, 
+    // Vem da RAM de Dados (leitura)
+    input wire [7:0] dataFromRam,  
+
+    // --- Sinais de Controle (da CPUControl) ---
+    // PC
+    input wire pcLoadEnable,
+    input wire pcIncEnable,
+    // Banco de Registradores
+    input wire regWriteEnableA,
+    input wire regWriteEnableB,
+    // Seletores dos MUXes
+    input wire regAInMuxSel,  // 0: RAM, 1: Imediato
+    input wire regBInMuxSel,  // 0: RAM, 1: Imediato
+    input wire aluIn2MuxSel,  // 0: Reg B, 1: Zero (para CMP A==0)
+    input wire [1:0] ramInMuxSel, // 00: ALU, 01: Reg A, 10: Reg B
+    // ULA
+    input wire [4:0] aluSelector,
+
+    // --- Saidas para o Top-Level ---
+    // Endereco para ROM de Instrucoes
+    output wire [7:0] pcOut,          
+    // Endereco para RAM de Dados
+    output wire [7:0] addressToRam,   
+    // Dado para RAM de Dados (escrita)
+    output wire [7:0] dataToRam,      
+    // Saida da ULA (para JMP condicional)
+    output wire [7:0] aluResult,      
+    // Saidas dos Registradores (para debug)
+    output wire [7:0] registerAOut,
+    output wire [7:0] registerBOut
+);
+
+    // --- Fios Internos (Wires) ---
+    wire [7:0] immediateValue;
+    
+    // Saidas do Banco de Registradores
+    wire [7:0] regOutA;
+    wire [7:0] regOutB;
+    
+    // Entradas do Banco de Registradores (apos os Muxes)
+    wire [7:0] regInA;
+    wire [7:0] regInB;
+
+    // Entradas da ULA (apos os Muxes)
+    wire [7:0] aluIn1;
+    wire [7:0] aluIn2;
+    wire [7:0] aluOut; // Saida da ULA
+    wire aluCout;
+
+    // --- Logica de Atribuicao (Combinacional) ---
+
+    // O valor imediato/endereco e sempre os 8 bits inferiores da instrucao
+    assign immediateValue = instruction[7:0];
+
+    // O endereco para a RAM e sempre o valor imediato
+    assign addressToRam = immediateValue;
+
+    // A entrada 1 da ULA e sempre o Registrador A
+    assign aluIn1 = regOutA;
+
+    // MUX: Seleciona a entrada A do Registrador
+    // 0 = Dado vindo da RAM (LDA)
+    // 1 = Valor imediato (LDC)
+    assign regInA = (regAInMuxSel == 1'b0) ? dataFromRam : immediateValue;
+
+    // MUX: Seleciona a entrada B do Registrador
+    // 0 = Dado vindo da RAM (LDB)
+    // 1 = Valor imediato (LDC_B, instrucao extra)
+    assign regInB = (regBInMuxSel == 1'b0) ? dataFromRam : immediateValue;
+
+    // MUX: Seleciona a entrada 2 da ULA
+    // 0 = Registrador B (ADD, SUB, etc)
+    // 1 = Valor Zero (para JMP, que testa A == 0)
+    assign aluIn2 = (aluIn2MuxSel == 1'b0) ? regOutB : 8'h00;
+
+    // MUX: Seleciona o dado a ser escrito na RAM
+    reg [7:0] dataToRamMuxOut;
+    always @(*) begin
+        case (ramInMuxSel)
+            2'b00:  dataToRamMuxOut = aluOut;    // Resultado (ADD, SUB)
+            2'b01:  dataToRamMuxOut = regOutA;   // Registrador A (STA)
+            2'b10:  dataToRamMuxOut = regOutB;   // Registrador B (STB)
+            default: dataToRamMuxOut = 8'h00;    // Padrao
+        endcase
+    end
+    assign dataToRam = dataToRamMuxOut;
+
+    // --- Instanciacao dos Modulos ---
+
+    // Passo 1: Contador de Programa
+    ProgramCounter pc_inst (
+        .clk(clk),
+        .reset(reset),
+        .loadEnable(pcLoadEnable),
+        .incEnable(pcIncEnable),
+        .dataIn(immediateValue), // JMP carrega o imediato
+        .pcOut(pcOut)
+    );
+
+    // Passo 2: Banco de Registradores
+    RegisterBank reg_bank_inst (
+        .clk(clk),
+        .reset(reset),
+        .dataInA(regInA),
+        .writeEnableA(regWriteEnableA),
+        .dataInB(regInB),
+        .writeEnableB(regWriteEnableB),
+        .dataOutA(regOutA),
+        .dataOutB(regOutB)
+    );
+
+    // ULA (Reutilizada)
+    ArithmeticLogicUnit alu_inst (
+        .in1(aluIn1),
+        .in2(aluIn2),
+        .selector(aluSelector),
+        .out(aluOut),
+        .cout(aluCout)
+    );
+
+    // --- Atribuicao das Saidas Finais ---
+    assign aluResult = aluOut;
+    assign registerAOut = regOutA;
+    assign registerBOut = regOutB;
+
+endmodule

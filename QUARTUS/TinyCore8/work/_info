@@ -1,0 +1,214 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/david/Bancada/Processos Seletivos/cepedi/PROJETOS/PROJETO FINAL/TinyCore8
+vArithmeticLogicUnit
+Z1 !s110 1763601109
+!i10b 1
+!s100 cAZiUi=N[7Qi>0[o:Ceb_0
+Ik1Ri00e99lCRXh:TmZi[d1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1763323548
+8ArithmeticLogicUnit.v
+FArithmeticLogicUnit.v
+FDefinitions.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1763601109.000000
+!s107 Definitions.v|ArithmeticLogicUnit.v|
+!s90 -reportprogress|300|-work|work|+incdir+.|ArithmeticLogicUnit.v|
+!i113 1
+Z5 o-work work
+Z6 !s92 -work work +incdir+.
+Z7 tCvgOpt 0
+n@arithmetic@logic@unit
+vControlUnit
+R1
+!i10b 1
+!s100 ZW2a4Z@`cMiP@Um0HLYl:2
+Immb0ei6N1MB]JYTMQON1o3
+R2
+R0
+w1763327816
+8ControlUnit.v
+FControlUnit.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 Definitions.v|ControlUnit.v|
+!s90 -reportprogress|300|-work|work|+incdir+.|ControlUnit.v|
+!i113 1
+R5
+R6
+R7
+n@control@unit
+vDatapath
+R1
+!i10b 1
+!s100 7f00LA6?`A<nd0<Y[T_zJ2
+I25?9PSjVG0GDfRiV`BRb@3
+R2
+R0
+w1763271557
+8Datapath.v
+FDatapath.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 Datapath.v|
+!s90 -reportprogress|300|-work|work|+incdir+.|Datapath.v|
+!i113 1
+R5
+R6
+R7
+n@datapath
+vProgramCounter
+R1
+!i10b 1
+!s100 ^YbP0Yb=6cJ:VKhFdMkd61
+IQSV1cf:fGA3z]aQbic1Zn3
+R2
+R0
+w1763259726
+8ProgramCounter.v
+FProgramCounter.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 ProgramCounter.v|
+!s90 -reportprogress|300|-work|work|+incdir+.|ProgramCounter.v|
+!i113 1
+R5
+R6
+R7
+n@program@counter
+vProgramROM
+R1
+!i10b 1
+!s100 g[G8aCaCXn<CgegJz_jW<3
+I`HbGX`Z]ho1fU<XcJ;lhQ2
+R2
+R0
+w1763326777
+8ProgramROM.v
+FProgramROM.v
+Z8 L0 39
+R3
+r1
+!s85 0
+31
+R4
+!s107 ProgramROM.v|
+!s90 -reportprogress|300|-work|work|ProgramROM.v|
+!i113 1
+R5
+R7
+n@program@r@o@m
+vRegisterBank
+R1
+!i10b 1
+!s100 f:@zkGOl0PG]^]kz<XL7?3
+IazN=^Rcf3dHUPoG0Y49f^2
+R2
+R0
+w1763236219
+8RegisterBank.v
+FRegisterBank.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 RegisterBank.v|
+!s90 -reportprogress|300|-work|work|+incdir+.|RegisterBank.v|
+!i113 1
+R5
+R6
+R7
+n@register@bank
+vTinyCore8
+R1
+!i10b 1
+!s100 e@T[IDzK26bQf301^oM=G0
+IVdZ13[dZ3V9LGQ;z=3W3R2
+R2
+R0
+w1763338633
+8TinyCore8.v
+FTinyCore8.v
+L0 19
+R3
+r1
+!s85 0
+31
+R4
+!s107 TinyCore8.v|
+!s90 -reportprogress|300|-work|work|TinyCore8.v|
+!i113 1
+R5
+R7
+n@tiny@core8
+vTinyCore8TB
+R1
+!i10b 1
+!s100 @2=]_WFl^mJ_W7LgO`D1i3
+II``UeXOhn6DPb8o]S@UH_3
+R2
+R0
+w1763337796
+8TinyCore8TB.v
+FTinyCore8TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 TinyCore8TB.v|
+!s90 -reportprogress|300|-work|work|TinyCore8TB.v|
+!i113 1
+R5
+R7
+n@tiny@core8@t@b
+vValuesRAM
+R1
+!i10b 1
+!s100 ;R4>eI[kU2hZdUCU?6<<11
+IKTZ9FI[TUifgHUoklkGFn1
+R2
+R0
+w1763326770
+8ValuesRAM.v
+FValuesRAM.v
+R8
+R3
+r1
+!s85 0
+31
+R4
+!s107 ValuesRAM.v|
+!s90 -reportprogress|300|-work|work|ValuesRAM.v|
+!i113 1
+R5
+R7
+n@values@r@a@m

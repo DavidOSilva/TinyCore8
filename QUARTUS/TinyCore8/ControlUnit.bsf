@@ -1,0 +1,128 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 1096 272)
+	(text "ControlUnit" (rect 24 168 79 180)(font "Arial" (color 124 71 167)))
+	(text "inst" (rect 40 152 57 164)(font "Arial" (color 124 71 167)))
+	(port
+		(pt 224 0)
+		(input)
+		(text "instruction[11..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "instruction[11..0]" (rect 216 32 228 114)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 224 0)(pt 224 16)(color 124 71 167)(line_width 3))
+	)
+	(port
+		(pt 584 0)
+		(input)
+		(text "aluResult[7..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "aluResult[7..0]" (rect 576 32 588 103)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 584 0)(pt 584 16)(color 124 71 167)(line_width 3))
+	)
+	(port
+		(pt 40 0)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 32 25 44 39)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 40 0)(pt 40 16)(color 124 71 167))
+	)
+	(port
+		(pt 56 0)
+		(input)
+		(text "rst" (rect 0 0 12 12)(font "Arial" ))
+		(text "rst" (rect 48 25 60 37)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 56 0)(pt 56 16)(color 124 71 167))
+	)
+	(port
+		(pt 368 0)
+		(output)
+		(text "pcLoadEnable" (rect 464 0 532 12)(font "Arial" ))
+		(text "pcLoadEnable" (rect 360 32 372 100)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 368 0)(pt 368 16))
+	)
+	(port
+		(pt 384 0)
+		(output)
+		(text "pcIncEnable" (rect 464 0 524 12)(font "Arial" ))
+		(text "pcIncEnable" (rect 376 32 388 92)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 384 0)(pt 384 16))
+	)
+	(port
+		(pt 440 0)
+		(output)
+		(text "regWriteEnableA" (rect 464 0 546 12)(font "Arial" ))
+		(text "regWriteEnableA" (rect 432 32 444 114)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 440 0)(pt 440 16))
+	)
+	(port
+		(pt 496 0)
+		(output)
+		(text "regWriteEnableB" (rect 464 0 545 12)(font "Arial" ))
+		(text "regWriteEnableB" (rect 488 32 500 113)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 496 0)(pt 496 16))
+	)
+	(port
+		(pt 456 0)
+		(output)
+		(text "regAInMuxSel" (rect 464 0 531 12)(font "Arial" ))
+		(text "regAInMuxSel" (rect 448 32 460 99)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 456 0)(pt 456 16))
+	)
+	(port
+		(pt 512 0)
+		(output)
+		(text "regBInMuxSel" (rect 464 0 531 12)(font "Arial" ))
+		(text "regBInMuxSel" (rect 504 32 516 99)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 512 0)(pt 512 16))
+	)
+	(port
+		(pt 528 0)
+		(output)
+		(text "aluIn2MuxSel" (rect 464 0 528 12)(font "Arial" ))
+		(text "aluIn2MuxSel" (rect 520 32 532 96)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 528 0)(pt 528 16))
+	)
+	(port
+		(pt 648 0)
+		(output)
+		(text "ramInMuxSel[1..0]" (rect 464 0 553 12)(font "Arial" ))
+		(text "ramInMuxSel[1..0]" (rect 640 32 652 121)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 648 0)(pt 648 16)(line_width 3))
+	)
+	(port
+		(pt 976 0)
+		(output)
+		(text "ramWriteEnable" (rect 464 0 541 12)(font "Arial" ))
+		(text "ramWriteEnable" (rect 968 32 980 109)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 976 0)(pt 976 16))
+	)
+	(port
+		(pt 600 0)
+		(output)
+		(text "aluSelector[3..0]" (rect 464 0 544 12)(font "Arial" ))
+		(text "aluSelector[3..0]" (rect 592 32 604 112)(font "Arial" (color 124 71 167))(vertical))
+		(line (pt 600 0)(pt 600 16)(color 124 71 167)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 1008 192)(color 172 98 232))
+	)
+	(fill (color 240 203 255))
+)

@@ -1,0 +1,163 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 584 320)
+	(text "Datapath" (rect 224 104 268 116)(font "Arial" (color 171 51 55)))
+	(text "inst" (rect 240 88 257 100)(font "Arial" (color 171 51 55)))
+	(port
+		(pt 32 256)
+		(input)
+		(text "clk" (rect 0 -16 14 -4)(font "Arial" ))
+		(text "clk" (rect 24 216 36 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 32 256)(pt 32 240))
+	)
+	(port
+		(pt 48 256)
+		(input)
+		(text "rst" (rect 0 -16 12 -4)(font "Arial" ))
+		(text "rst" (rect 40 218 52 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 48 256)(pt 48 240))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "instruction[11..0]" (rect 0 -40 82 -28)(font "Arial" ))
+		(text "instruction[11..0]" (rect 21 43 103 55)(font "Arial" (color 171 51 55)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 520 96)
+		(input)
+		(text "dataFromRam[7..0]" (rect 24 -40 120 -28)(font "Arial" ))
+		(text "dataFromRam[7..0]" (rect 399 88 495 100)(font "Arial" (color 171 51 55)))
+		(line (pt 504 96)(pt 520 96)(line_width 3))
+	)
+	(port
+		(pt 120 256)
+		(input)
+		(text "pcLoadEnable" (rect 0 -16 68 -4)(font "Arial" ))
+		(text "pcLoadEnable" (rect 112 162 124 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 120 256)(pt 120 240))
+	)
+	(port
+		(pt 136 256)
+		(input)
+		(text "pcIncEnable" (rect 0 -16 60 -4)(font "Arial" ))
+		(text "pcIncEnable" (rect 128 170 140 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 136 256)(pt 136 240))
+	)
+	(port
+		(pt 192 256)
+		(input)
+		(text "regWriteEnableA" (rect 0 -16 82 -4)(font "Arial" ))
+		(text "regWriteEnableA" (rect 184 148 196 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 192 256)(pt 192 240))
+	)
+	(port
+		(pt 248 256)
+		(input)
+		(text "regWriteEnableB" (rect 0 -16 81 -4)(font "Arial" ))
+		(text "regWriteEnableB" (rect 240 149 252 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 248 256)(pt 248 240))
+	)
+	(port
+		(pt 208 256)
+		(input)
+		(text "regAInMuxSel" (rect 0 -16 67 -4)(font "Arial" ))
+		(text "regAInMuxSel" (rect 200 163 212 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 208 256)(pt 208 240))
+	)
+	(port
+		(pt 264 256)
+		(input)
+		(text "regBInMuxSel" (rect 0 -16 67 -4)(font "Arial" ))
+		(text "regBInMuxSel" (rect 256 164 268 231)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 264 256)(pt 264 240))
+	)
+	(port
+		(pt 280 256)
+		(input)
+		(text "aluIn2MuxSel" (rect 0 -16 64 -4)(font "Arial" ))
+		(text "aluIn2MuxSel" (rect 272 166 284 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 280 256)(pt 280 240))
+	)
+	(port
+		(pt 400 256)
+		(input)
+		(text "ramInMuxSel[1..0]" (rect 0 -16 89 -4)(font "Arial" ))
+		(text "ramInMuxSel[1..0]" (rect 392 141 404 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 400 256)(pt 400 240)(line_width 3))
+	)
+	(port
+		(pt 352 256)
+		(input)
+		(text "aluSelector[3..0]" (rect 0 -16 80 -4)(font "Arial" ))
+		(text "aluSelector[3..0]" (rect 344 150 356 230)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 352 256)(pt 352 240)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(output)
+		(text "addrToRom[7..0]" (rect 240 -40 322 -28)(font "Arial" ))
+		(text "addrToRom[7..0]" (rect 24 56 106 68)(font "Arial" (color 171 51 55)))
+		(line (pt 16 64)(pt 0 64)(line_width 3))
+	)
+	(port
+		(pt 520 64)
+		(output)
+		(text "addrToRam[7..0]" (rect 264 -40 346 -28)(font "Arial" ))
+		(text "addrToRam[7..0]" (rect 408 59 490 71)(font "Arial" (color 171 51 55)))
+		(line (pt 520 64)(pt 504 64)(line_width 3))
+	)
+	(port
+		(pt 520 48)
+		(output)
+		(text "dataToRam[7..0]" (rect 264 -40 346 -28)(font "Arial" ))
+		(text "dataToRam[7..0]" (rect 408 40 490 52)(font "Arial" (color 171 51 55)))
+		(line (pt 520 48)(pt 504 48)(line_width 3))
+	)
+	(port
+		(pt 336 256)
+		(output)
+		(text "aluOutResult[7..0]" (rect 240 -16 329 -4)(font "Arial" ))
+		(text "aluOutResult[7..0]" (rect 328 143 340 232)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 336 256)(pt 336 240)(line_width 3))
+	)
+	(port
+		(pt 456 256)
+		(output)
+		(text "registerAOut[7..0]" (rect 240 -16 327 -4)(font "Arial" ))
+		(text "registerAOut[7..0]" (rect 448 145 460 232)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 456 256)(pt 456 240)(line_width 3))
+	)
+	(port
+		(pt 440 256)
+		(output)
+		(text "registerBOut[7..0]" (rect 240 -16 327 -4)(font "Arial" ))
+		(text "registerBOut[7..0]" (rect 432 145 444 232)(font "Arial" (color 171 51 55))(vertical))
+		(line (pt 440 256)(pt 440 240)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 504 240)(color 171 51 55))
+	)
+	(fill (color 255 207 208))
+)

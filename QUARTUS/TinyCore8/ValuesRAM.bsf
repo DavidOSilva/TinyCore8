@@ -1,0 +1,71 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 312 312)
+	(text "ValuesRAM" (rect 80 104 161 120)(font "Arial" (color 115 157 76)(font_size 10)))
+	(text "inst" (rect 111 88 128 100)(font "Arial" (color 115 157 76)))
+	(port
+		(pt 0 40)
+		(input)
+		(text "data[7..0]" (rect 0 88 53 102)(font "Arial" (font_size 8)))
+		(text "data[7..0]" (rect 24 32 77 46)(font "Arial" (color 115 157 76)(font_size 8)))
+		(line (pt 0 40)(pt 16 40)(color 115 157 76)(line_width 3))
+	)
+	(port
+		(pt 192 248)
+		(input)
+		(text "wren" (rect -16 96 14 110)(font "Arial" (font_size 8)))
+		(text "wren" (rect 184 192 198 222)(font "Arial" (color 115 157 76)(font_size 8))(vertical))
+		(line (pt 192 248)(pt 192 232)(color 115 157 76)(line_width 3))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "address[7..0]" (rect 0 88 75 102)(font "Arial" (font_size 8)))
+		(text "address[7..0]" (rect 24 48 99 62)(font "Arial" (color 115 157 76)(font_size 8)))
+		(line (pt 0 56)(pt 16 56)(color 115 157 76)(line_width 3))
+	)
+	(port
+		(pt 40 248)
+		(input)
+		(text "clock" (rect -16 96 13 110)(font "Arial" (font_size 8)))
+		(text "clock" (rect 32 192 46 221)(font "Arial" (color 115 157 76)(font_size 8))(vertical))
+		(line (pt 40 248)(pt 40 232)(color 115 157 76)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(output)
+		(text "q[7..0]" (rect 32 104 67 118)(font "Arial" (font_size 8)))
+		(text "q[7..0]" (rect 25 80 60 94)(font "Arial" (color 115 157 76)(font_size 8)))
+		(line (pt 0 88)(pt 17 88)(color 115 157 76)(line_width 3))
+	)
+	(drawing
+		(text "256 words" (rect 95 148 144 160)(font "Arial" (color 115 157 76)))
+		(text "8 bits" (rect 105 126 132 138)(font "Arial" (color 115 157 76)))
+		(line (pt 8 88)(pt 8 88)(color 115 157 76))
+		(line (pt 8 88)(pt 8 88)(color 115 157 76))
+		(line (pt 8 88)(pt 8 88)(color 115 157 76))
+		(line (pt 8 88)(pt 8 88)(color 115 157 76))
+		(rectangle (rect 16 16 232 232)(color 115 157 76))
+	)
+	(fill (color 240 255 221))
+)
